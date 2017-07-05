@@ -580,6 +580,8 @@ class JSArray<E> implements List<E>, JSIndexable<E> {
   Map<int, E> asMap() {
     return new ListMapView<E>(this);
   }
+
+  Type get runtimeType => wrapType(JS('', '#(#)', getGenericClass(List), E));
 }
 
 /**
